@@ -20,6 +20,7 @@ const Widget = styled.div`
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
+    letter-spacing: 0.8px;
   }
 `
 

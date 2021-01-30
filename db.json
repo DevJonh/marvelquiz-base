@@ -4,14 +4,14 @@
   "description": "Teste os seus conhecimentos sobre o Deus do Trovão e descubra seu nível asgardiano",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
+      "image": "https://supertabthemes.com/wp-content/uploads/2019/05/1-8-758x426.jpg",
+      "title": "Quando foi lançado o primeiro filme do Thor?",
+      "description": "considere os filmes novos da marvel",
       "answer": 2,
       "alternatives": [".elemento", "*elemento", "#elemento", "%elemento"]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "image": "https://supertabthemes.com/wp-content/uploads/2019/05/1-8-758x426.jpg",
       "title": "Como fazer um background gradiente com css?",
       "description": "Faz tempo em haha",
       "answer": 0,
