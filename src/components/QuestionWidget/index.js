@@ -4,16 +4,19 @@ import styled from 'styled-components'
 import Button from '../Button'
 import Question from '../Question'
 import Widget from '../Widget'
+import Image from '../Image'
 
-const Image = styled.div`
-  background-size: cover;
-  background-position: center;
-  background-image: url(${({ backgroundImage }) => backgroundImage});
-  background-color: ${({ theme }) => theme.colors.mainBg};
-  height: 200px;
-  width: 100%;
-
-  z-index: 1;
+const Results = styled.p`
+  width: 50%;
+  margin: 20px auto 0;
+  text-align: center;
+  background-color: ${({ state, theme }) =>
+    state === 1 ? theme.colors.success : theme.colors.wrong};
+  color: ${({ theme }) => theme.colors.contrastText};
+  font-weight: bold;
+  border-radius: 4px;
+  transition: 0.4s ease-in-out;
+  padding: 4px 0;
 `
 
 const QuestionWidget = ({
@@ -22,7 +25,8 @@ const QuestionWidget = ({
   questionActual,
   selectedFunc,
   selected,
-  confirm
+  confirm,
+  questionCorrect
 }) => {
   return (
     <Widget>
@@ -39,7 +43,15 @@ const QuestionWidget = ({
         {question.alternatives.map((alt, index) => {
           return (
             <Question
-              className={Number(selected) === index && 'active'}
+              className={
+                (Number(selected) === index &&
+                  questionCorrect === 1 &&
+                  'success') ||
+                (Number(selected) === index &&
+                  questionCorrect === 0 &&
+                  'error') ||
+                (Number(selected) === index && 'active')
+              }
               key={alt}
               value={index}
               onClick={selectedFunc}
@@ -49,9 +61,16 @@ const QuestionWidget = ({
           )
         })}
 
-        <Button type="button" onClick={confirm}>
+        <Button type="button" disabled={selected === 5} onClick={confirm}>
           CONFIRMAR
         </Button>
+
+        {questionCorrect === 1 && (
+          <Results state={questionCorrect}>Você Acertou</Results>
+        )}
+        {questionCorrect === 0 && (
+          <Results state={questionCorrect}>Você Errou</Results>
+        )}
       </Widget.Content>
     </Widget>
   )

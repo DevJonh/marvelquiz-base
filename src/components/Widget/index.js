@@ -30,6 +30,25 @@ const Widget = styled.div`
     letter-spacing: 0.8px;
     margin-top: 4px;
   }
+  a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.secondary};
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+    transition: 0.4s ease-in-out;
+    margin-top: 30px;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.contrastText};
+    }
+  }
 `
 
 Widget.Header = styled.header`
@@ -41,6 +60,15 @@ Widget.Header = styled.header`
 
   * {
     margin: 0;
+  }
+
+  span.css-0 {
+    display: flex;
+
+    span {
+      margin: 0;
+      margin-left: 6px;
+    }
   }
 `
 
@@ -55,6 +83,9 @@ Widget.Content = styled.div`
   ul {
     list-style: none;
     padding: 0;
+  }
+  span {
+    margin: 0 auto;
   }
 `
 

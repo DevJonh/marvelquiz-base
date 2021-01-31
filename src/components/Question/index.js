@@ -24,6 +24,12 @@ const Question = styled.button`
   &.active {
     background-color: ${({ theme }) => theme.colors.primary};
   }
+  &.success {
+    background-color: ${({ theme }) => theme.colors.success};
+  }
+  &.error {
+    background-color: ${({ theme }) => theme.colors.wrong};
+  }
 `
 
 export default Question

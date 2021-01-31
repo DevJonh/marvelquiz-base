@@ -1,12 +1,29 @@
 import React from 'react'
+import { css } from 'styled-components'
+import db from '../../../db.json'
+
+import { RingLoader, PulseLoader } from 'react-spinners'
+
 import Widget from '../Widget'
 
 const Loading = () => {
+  const override = css`
+    display: flex;
+  `
   return (
     <Widget>
-      <Widget.Header>Carregando...</Widget.Header>
+      <Widget.Header>
+        <h3>Carregando</h3>
+        <PulseLoader
+          size={6}
+          css={override}
+          color={db.theme.colors.contrastText}
+        />
+      </Widget.Header>
 
-      <Widget.Content>[Desafio do Loading]</Widget.Content>
+      <Widget.Content>
+        <RingLoader size={120} color={db.theme.colors.contrastText} />
+      </Widget.Content>
     </Widget>
   )
 }

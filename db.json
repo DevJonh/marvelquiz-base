@@ -36,7 +36,7 @@
     },
     {
       "image": "https://supertabthemes.com/wp-content/uploads/2019/05/1-8-758x426.jpg",
-      "title": "Em Vingadores Ultimato quem ajudou Thor a superar a depreção?",
+      "title": "Em Vingadores Ultimato quem ajudou Thor a superar a depressão?",
       "description": "",
       "answer": 3,
       "alternatives": ["Rocket", "Hulk", "Jane Foster", "Frigga"]
@@ -54,5 +54,10 @@
       "success": "#388e3c"
     },
     "borderRadius": "4px"
+  },
+  "resultImage": {
+    "top": "https://giffiles.alphacoders.com/206/206613.gif",
+    "middle": "https://img.buzzfeed.com/store-an-image-prod-us-east-1/B7Kof8Qba.gif",
+    "low": "https://uploads.spiritfanfiction.com/fanfics/capitulos/201905/infinity-16479781-100520191701.gif"
   }
 }
