@@ -5,25 +5,47 @@
   "questions": [
     {
       "image": "https://supertabthemes.com/wp-content/uploads/2019/05/1-8-758x426.jpg",
-      "title": "Quando foi lançado o primeiro filme do Thor?",
-      "description": "considere os filmes novos da marvel",
+      "title": "Qual o ano de lançamento do primeiro filme do Thor?",
+      "description": "Considere somente os filmes novos da marvel",
       "answer": 2,
-      "alternatives": [".elemento", "*elemento", "#elemento", "%elemento"]
+      "alternatives": [2009, 2012, 2011, 2013]
     },
     {
       "image": "https://supertabthemes.com/wp-content/uploads/2019/05/1-8-758x426.jpg",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "title": "Em Vingadores Ultimato o que motivou Thor a aceitar o convite de Hulk e Rocket?",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "Poder Matar o Thanos Novamente",
+        "Salvar a Metade que Desapareceu no Estalo",
+        "Uma Garrafa de Cerveja",
+        "Nenhuma das Opções"
+      ]
+    },
+    {
+      "image": "https://supertabthemes.com/wp-content/uploads/2019/05/1-8-758x426.jpg",
+      "title": "Quais os vilões do primeiro filme do Thor?",
+      "description": "",
       "answer": 0,
       "alternatives": [
-        "background: linear-gradient(#e66465, #9198e5);",
-        "background: gradient(#e66465, #9198e5);"
+        "Loki e Destruidor",
+        "Hela e Surtur",
+        "Ultron e Hidra",
+        "O Elfos Negros"
       ]
+    },
+    {
+      "image": "https://supertabthemes.com/wp-content/uploads/2019/05/1-8-758x426.jpg",
+      "title": "Em Vingadores Ultimato quem ajudou Thor a superar a depreção?",
+      "description": "",
+      "answer": 3,
+      "alternatives": ["Rocket", "Hulk", "Jane Foster", "Frigga"]
     }
   ],
   "external": [""],
   "theme": {
     "colors": {
+      "primary_op": "#272D4Dcc",
       "primary": "#272D4D",
       "secondary": "#7BD8E7",
       "mainBg": "#386299cc",

@@ -1,3 +1,4 @@
+import React from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Head from 'next/head'
 import db from '../db.json'
@@ -36,6 +37,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>{db.title}</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"

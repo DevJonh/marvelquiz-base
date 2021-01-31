@@ -13,7 +13,7 @@ const Widget = styled.div`
   h3 {
     font-size: 16px;
     font-weight: 700;
-    line-height: 1;
+    line-height: 24px;
     margin-bottom: 0;
   }
   p {
@@ -21,6 +21,14 @@ const Widget = styled.div`
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0.8px;
+  }
+  span {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.8px;
+    margin-top: 4px;
   }
 `
 
