@@ -49,14 +49,14 @@ const QuizPage = () => {
       if (questionActual + 1 >= totalQuestion) {
         setTimeout(() => {
           setScreenState(screenStates.RESULT)
-        }, 2 * 1000)
+        }, 3 * 900)
       }
 
       setTimeout(() => {
         setIsCorrect(3)
         setSelected(5)
         setQuestionActual(questionActual + 1)
-      }, 2 * 1000)
+      }, 3 * 900)
     } else {
       setScreenState(screenStates.RESULT)
     }

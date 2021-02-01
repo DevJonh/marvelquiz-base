@@ -3,6 +3,10 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import { MdChevronLeft } from 'react-icons/md'
 import { motion } from 'framer-motion'
+import Lottie from 'react-lottie'
+
+import success from '../../icons/success.json'
+import error from '../../icons/error.json'
 
 import Button from '../Button'
 import Question from '../Question'
@@ -13,8 +17,7 @@ const Results = styled.p`
   width: 50%;
   margin: 20px auto 0;
   text-align: center;
-  background-color: ${({ state, theme }) =>
-    state === 1 ? theme.colors.success : theme.colors.wrong};
+
   color: ${({ theme }) => theme.colors.contrastText};
   font-weight: bold;
   border-radius: 4px;
@@ -62,7 +65,7 @@ const QuestionWidget = ({
             <Question
               as={motion.button}
               whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.7, delay: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
               variants={{
                 show: { opacity: 1 },
                 hidden: { opacity: 0 }
@@ -98,10 +101,36 @@ const QuestionWidget = ({
         </Button>
 
         {questionCorrect === 1 && (
-          <Results state={questionCorrect}>Você Acertou</Results>
+          <Results state={questionCorrect}>
+            <Lottie
+              options={{
+                autoplay: true,
+                animationData: success,
+                loop: true,
+                rendererSettings: {
+                  preserveAspectRatio: 'Success_tick'
+                }
+              }}
+              width={36}
+              height={36}
+            />
+          </Results>
         )}
         {questionCorrect === 0 && (
-          <Results state={questionCorrect}>Você Errou</Results>
+          <Results state={questionCorrect}>
+            <Lottie
+              options={{
+                autoplay: true,
+                animationData: error,
+                loop: true,
+                rendererSettings: {
+                  preserveAspectRatio: 'Frame 1'
+                }
+              }}
+              width={36}
+              height={36}
+            />
+          </Results>
         )}
       </Widget.Content>
     </Widget>
