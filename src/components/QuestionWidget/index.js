@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { MdChevronLeft } from 'react-icons/md'
 import { motion } from 'framer-motion'
 import Lottie from 'react-lottie'
@@ -13,7 +14,7 @@ import Question from '../Question'
 import Widget from '../Widget'
 import Image from '../Image'
 
-const Results = styled.p`
+const Results = styled.div`
   width: 50%;
   margin: 20px auto 0;
   text-align: center;
@@ -34,6 +35,7 @@ const QuestionWidget = ({
   confirm,
   questionCorrect
 }) => {
+  const router = useRouter()
   return (
     <Widget
       as={motion.section}
@@ -46,7 +48,12 @@ const QuestionWidget = ({
       animate="show"
     >
       <Widget.Header>
-        <Link href="/">
+        <Link
+          href={{
+            pathname: '/home',
+            query: { id: router.query.id }
+          }}
+        >
           <a>
             <MdChevronLeft size={20} />
           </a>
@@ -106,13 +113,11 @@ const QuestionWidget = ({
               options={{
                 autoplay: true,
                 animationData: success,
-                loop: true,
-                rendererSettings: {
-                  preserveAspectRatio: 'Success_tick'
-                }
+                loop: true
               }}
               width={36}
               height={36}
+              value="Success_tick"
             />
           </Results>
         )}
@@ -122,13 +127,11 @@ const QuestionWidget = ({
               options={{
                 autoplay: true,
                 animationData: error,
-                loop: true,
-                rendererSettings: {
-                  preserveAspectRatio: 'Frame 1'
-                }
+                loop: true
               }}
               width={36}
               height={36}
+              value="Frame 1"
             />
           </Results>
         )}

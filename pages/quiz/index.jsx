@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 
-import db from '../../db.json'
+import db from '../../src/database/thor.json'
 
 import QuizLogo from '../../src/components/QuizLogo'
 import QuizBackground from '../../src/components/QuizBackground'

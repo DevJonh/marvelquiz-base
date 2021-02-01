@@ -1,4 +1,4 @@
-import db from '../../db.json'
+import db from '../../src/database/db.json'
 
 export default (req, res) => {
   if (req.method === 'OPTIONS') {

@@ -19,7 +19,7 @@ const Question = styled.button`
   outline: none;
 
   &:hover {
-    background-color: '#272d4dee';
+    background-color: ${({ theme }) => theme.colors.primary};
   }
 
   &.active {

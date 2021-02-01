@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 
-import db from '../../../db.json'
+import db from '../../database/db.json'
 
 import Widget from '../Widget'
 import Image from '../Image'
@@ -10,6 +11,7 @@ import Image from '../Image'
 const ResultWidget = ({ results, questionsTotal, name }) => {
   const hits = results.filter((x) => x).length
   const percentual = ((hits / questionsTotal) * 100).toFixed(1)
+  const router = useRouter()
   return (
     <>
       <Widget
@@ -62,6 +64,14 @@ const ResultWidget = ({ results, questionsTotal, name }) => {
           )}
 
           <Link href="/">
+            <a>Retornar ao início</a>
+          </Link>
+          <Link
+            href={{
+              pathname: '/home',
+              query: { id: router.query.id }
+            }}
+          >
             <a>Retornar ao início</a>
           </Link>
         </Widget.Content>

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
-import db from '../../../db.json'
-
 import QuizLogo from '../../components/QuizLogo'
 import QuizBackground from '../../components/QuizBackground'
 import Footer from '../../components/Footer'

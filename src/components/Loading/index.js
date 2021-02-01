@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import db from '../../../db.json'
+import db from '../../database/db.json'
 
 import { RingLoader, PulseLoader } from 'react-spinners'
 
