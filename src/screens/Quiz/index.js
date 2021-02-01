@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
-import db from '../db.json'
+import db from '../../../db.json'
 
-import QuizLogo from '../src/components/QuizLogo'
-import QuizBackground from '../src/components/QuizBackground'
-import Footer from '../src/components/Footer'
-import QuizContainer from '../src/components/QuizContainer'
-import QuestionWidget from '../src/components/QuestionWidget'
-import Loading from '../src/components/Loading'
-import ResultWidget from '../src/components/ResultWidget'
+import QuizLogo from '../../components/QuizLogo'
+import QuizBackground from '../../components/QuizBackground'
+import Footer from '../../components/Footer'
+import QuizContainer from '../../components/QuizContainer'
+import QuestionWidget from '../../components/QuestionWidget'
+import Loading from '../../components/Loading'
+import ResultWidget from '../../components/ResultWidget'
 
 const screenStates = {
   QUIZ: 'QUIZ',
@@ -17,15 +17,15 @@ const screenStates = {
   RESULT: 'RESULT'
 }
 
-const QuizPage = () => {
+const QuizScreens = ({ questions, bg }) => {
   const [questionActual, setQuestionActual] = useState(0)
   const [selected, setSelected] = useState(5)
   const [hits, setHits] = useState([])
   const [isCorrect, setIsCorrect] = useState(3)
   const [screenState, setScreenState] = useState(screenStates.LOADING)
 
-  const question = db.questions[questionActual]
-  const totalQuestion = db.questions.length
+  const question = questions[questionActual]
+  const totalQuestion = questions.length
 
   const router = useRouter()
 
@@ -63,7 +63,7 @@ const QuizPage = () => {
 
   return (
     <>
-      <QuizBackground backgroundImage={db.bg}>
+      <QuizBackground backgroundImage={bg}>
         <QuizContainer>
           <QuizLogo />
           {screenState === screenStates.QUIZ && (
@@ -94,4 +94,4 @@ const QuizPage = () => {
   )
 }
 
-export default QuizPage
+export default QuizScreens

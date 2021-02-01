@@ -70,9 +70,20 @@ Widget.Header = styled.header`
       margin-left: 6px;
     }
   }
+  a {
+    cursor: pointer;
+    margin: 0px;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    color: ${({ theme }) => theme.colors.contrastText};
+    padding: 0;
+    margin-right: 20px;
+  }
 `
 
 Widget.Content = styled.div`
+  position: relative;
   padding: 24px 32px 32px 32px;
   & > *:first-child {
     margin-top: 0;
@@ -86,6 +97,21 @@ Widget.Content = styled.div`
   }
   span {
     margin: 0 auto;
+  }
+  &.galera {
+    height: 270px;
+    overflow-y: scroll;
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.colors.primary};
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      color: ${({ theme }) => theme.colors.mainBg};
+    }
   }
 `
 

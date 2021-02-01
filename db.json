@@ -42,7 +42,7 @@
       "alternatives": ["Rocket", "Hulk", "Jane Foster", "Frigga"]
     }
   ],
-  "external": [""],
+  "external": [],
   "theme": {
     "colors": {
       "primary_op": "#272D4Dcc",

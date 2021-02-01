@@ -18,7 +18,21 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.contrastText};
   }
   html, body {
-    min-height: 100vh;
+    min-width: 100%;
+    height: 100vh;
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.colors.primary};
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: ${({ theme }) => theme.colors.mainBg};
+    }
+
+    
   }
   input{
     font-family: 'Lato', sans-serif;

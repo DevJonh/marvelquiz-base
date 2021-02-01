@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from 'next/link'
+import { MdChevronLeft } from 'react-icons/md'
+import { motion } from 'framer-motion'
 
 import Button from '../Button'
 import Question from '../Question'
@@ -29,8 +32,22 @@ const QuestionWidget = ({
   questionCorrect
 }) => {
   return (
-    <Widget>
+    <Widget
+      as={motion.section}
+      transition={{ duration: 1, delay: 0.5 }}
+      variants={{
+        show: { opacity: 1, y: '0' },
+        hidden: { opacity: 0, y: '100%' }
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <Widget.Header>
+        <Link href="/">
+          <a>
+            <MdChevronLeft size={20} />
+          </a>
+        </Link>
         <h1>
           Pergunta {questionActual + 1} de {totalQuestion}
         </h1>
@@ -43,6 +60,15 @@ const QuestionWidget = ({
         {question.alternatives.map((alt, index) => {
           return (
             <Question
+              as={motion.button}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.7, delay: 1 }}
+              variants={{
+                show: { opacity: 1 },
+                hidden: { opacity: 0 }
+              }}
+              initial="hidden"
+              animate="show"
               className={
                 (Number(selected) === index &&
                   questionCorrect === 1 &&
@@ -61,7 +87,13 @@ const QuestionWidget = ({
           )
         })}
 
-        <Button type="button" disabled={selected === 5} onClick={confirm}>
+        <Button
+          as={motion.button}
+          whileTap={{ scale: 0.9 }}
+          type="button"
+          disabled={selected === 5}
+          onClick={confirm}
+        >
           CONFIRMAR
         </Button>
 

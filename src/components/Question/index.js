@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 const Question = styled.button`
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.primary_op};
+  background-color: ${({ theme }) =>
+    theme.colors.primary_op || theme.colors.primary};
   color: ${({ theme }) => theme.colors.contrastText};
   padding: 12px 16px;
   border-radius: 4px;
@@ -18,7 +19,7 @@ const Question = styled.button`
   outline: none;
 
   &:hover {
-    background-color: #272d4dee;
+    background-color: '#272d4dee';
   }
 
   &.active {

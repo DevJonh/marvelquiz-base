@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 import db from '../../../db.json'
 
@@ -11,7 +12,16 @@ const ResultWidget = ({ results, questionsTotal, name }) => {
   const percentual = ((hits / questionsTotal) * 100).toFixed(1)
   return (
     <>
-      <Widget>
+      <Widget
+        as={motion.section}
+        transition={{ duration: 1, delay: 0.5 }}
+        variants={{
+          show: { opacity: 1, y: '0' },
+          hidden: { opacity: 0, y: '100%' }
+        }}
+        initial="hidden"
+        animate="show"
+      >
         <Widget.Header>
           <h2>
             Você acertou {hits} de {questionsTotal} pergutas!
