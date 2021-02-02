@@ -34,11 +34,18 @@ const QuizPage = () => {
   }, [router.query.id])
 
   useEffect(() => {
-    res.then((res) => {
-      if (res !== undefined) {
-        setDb(res)
-      }
-    })
+    res
+      .then((res) => {
+        if (res !== undefined) {
+          setDb(res)
+        }
+      })
+      .catch(() => {
+        router.push({
+          pathname: '/home',
+          query: { id: router.query.id }
+        })
+      })
   })
 
   useEffect(() => {
