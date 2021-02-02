@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 export const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors.wrong};
+  background-color: ${({ theme }) => theme.colors.secondary_op};
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
   border-radius: 4px;
   border: none;
@@ -18,7 +18,7 @@ export const Button = styled.button`
   transition: background 0.3s;
 
   &:hover {
-    background-color: #c41c19;
+    background-color: ${({ theme }) => theme.colors.secondary};
   }
 
   &:disabled {

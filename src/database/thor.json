@@ -1,5 +1,5 @@
 {
-  "id": 1,
+  "id": "thor",
   "bg": "https://i.pinimg.com/originals/ab/d5/f5/abd5f53d180ab7221d961020e6f9c972.jpg",
   "title": "Thor - Deus do Trovão",
   "description": "Teste os seus conhecimentos sobre o Deus do Trovão e descubra seu nível asgardiano",
@@ -48,7 +48,8 @@
     "colors": {
       "primary_op": "#272D4Dcc",
       "primary": "#272D4D",
-      "secondary": "#7BD8E7",
+      "secondary": "#950106",
+      "secondary_op": "#950106dd",
       "mainBg": "#386299cc",
       "contrastText": "#F2FFFF",
       "wrong": "#a02725",
@@ -57,8 +58,20 @@
     "borderRadius": "4px"
   },
   "resultImage": {
-    "top": "https://giffiles.alphacoders.com/206/206613.gif",
-    "middle": "https://img.buzzfeed.com/store-an-image-prod-us-east-1/B7Kof8Qba.gif",
-    "low": "https://uploads.spiritfanfiction.com/fanfics/capitulos/201905/infinity-16479781-100520191701.gif"
+    "top": {
+      "url": "https://giffiles.alphacoders.com/206/206613.gif",
+      "title": "Uauuu! Seu nível de Asgardiano é de",
+      "msg": "Fantástico! Arrasou hein? Estou começando a achar que você é um Asgardiano entre nós."
+    },
+    "middle": {
+      "url": "https://img.buzzfeed.com/store-an-image-prod-us-east-1/B7Kof8Qba.gif",
+      "title": "Muito bom! Seu nível de Asgardiano é de",
+      "msg": "Parabéns! Você está acima da Média, mas pode melhorar."
+    },
+    "low": {
+      "url": "https://uploads.spiritfanfiction.com/fanfics/capitulos/201905/infinity-16479781-100520191701.gif",
+      "title": "Seu nível de Asgardiano é de",
+      "msg": "Acho que você pode melhorar, assista aos filmes de Thor e tente novamente."
+    }
   }
 }

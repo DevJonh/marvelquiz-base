@@ -10,6 +10,9 @@ const QuizBackground = styled.div`
   background-color: ${({ theme }) => theme.colors.mainBg};
 
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 `
 
 export default QuizBackground

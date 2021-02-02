@@ -1,6 +1,7 @@
 import React from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import db from '../src/database/db.json'
 
 const GlobalStyle = createGlobalStyle`
@@ -45,9 +46,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const theme = db.theme
-
 export default function App({ Component, pageProps }) {
+  const router = useRouter()
+
+  let dbId =
+    router.query.id && require(`../src/database/${router.query.id}.json`)
+
+  const theme = dbId ? dbId.theme : db.theme
+
   return (
     <>
       <Head>

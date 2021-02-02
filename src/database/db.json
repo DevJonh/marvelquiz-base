@@ -1,64 +1,30 @@
 {
-  "id": 1,
-  "bg": "https://i.pinimg.com/originals/ab/d5/f5/abd5f53d180ab7221d961020e6f9c972.jpg",
-  "title": "Thor - Deus do Trovão",
-  "description": "Teste os seus conhecimentos sobre o Deus do Trovão e descubra seu nível asgardiano",
-  "questions": [
+  "bg": "https://wallpaper.dog/large/17019131.jpg",
+  "topics": [
     {
-      "image": "https://supertabthemes.com/wp-content/uploads/2019/05/1-8-758x426.jpg",
-      "title": "Qual o ano de lançamento do primeiro filme do Thor?",
-      "description": "Considere somente os filmes novos da marvel",
-      "answer": 2,
-      "alternatives": [2009, 2012, 2011, 2013]
+      "id": "thor",
+      "bg": "https://i.pinimg.com/originals/ab/d5/f5/abd5f53d180ab7221d961020e6f9c972.jpg",
+      "title": "Thor - Deus do Trovão",
+      "description": "Teste os seus conhecimentos sobre o Deus do Trovão e descubra seu nível asgardiano"
     },
     {
-      "image": "https://supertabthemes.com/wp-content/uploads/2019/05/1-8-758x426.jpg",
-      "title": "Em Vingadores Ultimato o que motivou Thor a aceitar o convite de Hulk e Rocket?",
-      "description": "",
-      "answer": 2,
-      "alternatives": [
-        "Poder Matar o Thanos Novamente",
-        "Salvar a Metade que Desapareceu no Estalo",
-        "Uma Garrafa de Cerveja",
-        "Nenhuma das Opções"
-      ]
-    },
-    {
-      "image": "https://supertabthemes.com/wp-content/uploads/2019/05/1-8-758x426.jpg",
-      "title": "Quais os vilões do primeiro filme do Thor?",
-      "description": "",
-      "answer": 0,
-      "alternatives": [
-        "Loki e Destruidor",
-        "Hela e Surtur",
-        "Ultron e Hidra",
-        "O Elfos Negros"
-      ]
-    },
-    {
-      "image": "https://supertabthemes.com/wp-content/uploads/2019/05/1-8-758x426.jpg",
-      "title": "Em Vingadores Ultimato quem ajudou Thor a superar a depressão?",
-      "description": "",
-      "answer": 3,
-      "alternatives": ["Rocket", "Hulk", "Jane Foster", "Frigga"]
+      "id": "pantera_negra",
+      "bg": "https://images2.alphacoders.com/863/thumb-1920-863001.jpg",
+      "title": "Pantera Negra - Rei de Wakanda",
+      "description": "Teste os seus conhecimentos sobre o Rei de Wakanda e descubra se você entraria para tribo"
     }
   ],
-  "external": [],
   "theme": {
     "colors": {
-      "primary_op": "#272D4Dcc",
-      "primary": "#272D4D",
-      "secondary": "#7BD8E7",
-      "mainBg": "#386299cc",
-      "contrastText": "#F2FFFF",
-      "wrong": "#a02725",
+      "primary_op": "#79313Dcc",
+      "primary": "#940000",
+      "secondary": "#000000",
+      "secondary_op": "#00000077",
+      "mainBg": "#3C456Ecc",
+      "contrastText": "#fff",
+      "wrong": "#D92639",
       "success": "#388e3c"
     },
     "borderRadius": "4px"
-  },
-  "resultImage": {
-    "top": "https://giffiles.alphacoders.com/206/206613.gif",
-    "middle": "https://img.buzzfeed.com/store-an-image-prod-us-east-1/B7Kof8Qba.gif",
-    "low": "https://uploads.spiritfanfiction.com/fanfics/capitulos/201905/infinity-16479781-100520191701.gif"
   }
 }

@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
-
-import db from '../../src/database/thor.json'
 
 import QuizLogo from '../../src/components/QuizLogo'
 import QuizBackground from '../../src/components/QuizBackground'
@@ -25,16 +23,22 @@ const QuizPage = () => {
   const [isCorrect, setIsCorrect] = useState(3)
   const [screenState, setScreenState] = useState(screenStates.LOADING)
 
-  const question = db.questions[questionActual]
-  const totalQuestion = db.questions.length
-
   const router = useRouter()
+
+  const db = useMemo(() => {
+    return (
+      router.query.id && require(`../../src/database/${router.query.id}.json`)
+    )
+  }, [router.query.id])
 
   useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ)
     }, 2 * 1000)
   }, [])
+
+  const question = db.questions[questionActual]
+  const totalQuestion = db.questions.length
 
   const confirm = () => {
     if (questionActual <= totalQuestion) {
@@ -82,11 +86,7 @@ const QuizPage = () => {
           {screenState === screenStates.LOADING && <Loading />}
 
           {screenState === screenStates.RESULT && (
-            <ResultWidget
-              results={hits}
-              name={router.query.name}
-              questionsTotal={totalQuestion}
-            />
+            <ResultWidget results={hits} questionsTotal={totalQuestion} />
           )}
           <Footer
             as={motion.footer}

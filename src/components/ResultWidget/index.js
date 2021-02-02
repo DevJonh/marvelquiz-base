@@ -3,15 +3,16 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 
-import db from '../../database/db.json'
-
 import Widget from '../Widget'
 import Image from '../Image'
 
-const ResultWidget = ({ results, questionsTotal, name }) => {
+const ResultWidget = ({ results, questionsTotal }) => {
   const hits = results.filter((x) => x).length
   const percentual = ((hits / questionsTotal) * 100).toFixed(1)
   const router = useRouter()
+  const db =
+    router.query.id && require(`../../database/${router.query.id}.json`)
+
   return (
     <>
       <Widget
@@ -29,51 +30,56 @@ const ResultWidget = ({ results, questionsTotal, name }) => {
             Você acertou {hits} de {questionsTotal} pergutas!
           </h2>
         </Widget.Header>
-        {percentual >= 70 && <Image backgroundImage={db.resultImage.top} />}
+        {percentual >= 70 && <Image backgroundImage={db.resultImage.top.url} />}
         {percentual < 70 && percentual >= 40 && (
-          <Image backgroundImage={db.resultImage.middle} />
+          <Image backgroundImage={db.resultImage.middle.url} />
         )}
-        {percentual < 40 && <Image backgroundImage={db.resultImage.low} />}
+        {percentual < 40 && <Image backgroundImage={db.resultImage.low.url} />}
 
         <Widget.Content>
           {percentual < 70 && percentual >= 40 && (
             <>
-              <h3>Muito bom! Seu nível de Asgardiano é {percentual}%!</h3>
-              <p>
-                Parabéns {name}! Você está acima da Média, mas pode melhorar.
-              </p>
+              <h3>
+                {db.resultImage.middle.title} {percentual}%!
+              </h3>
+              <p>{db.resultImage.middle.msg}</p>
             </>
           )}
           {percentual >= 70 && (
             <>
-              <h3>Uauuu! Seu nível de Asgardiano é {percentual}%!</h3>
-              <p>
-                Fantástico! Arrasou hein {name}? Estou começando a achar que
-                você é um Asgardiano entre nós.
-              </p>
+              <h3>
+                {db.resultImage.top.title} {percentual}%!
+              </h3>
+              <p>{db.resultImage.top.msg}</p>
             </>
           )}
           {percentual < 40 && (
             <>
-              <h3>Seu nível de Asgardiano é {percentual}%!</h3>
-              <p>
-                Acho que você pode melhorar {name}, assista aos filmes de Thor e
-                tente novamente.
-              </p>
+              <h3>
+                {db.resultImage.low.title} {percentual}%!
+              </h3>
+              <p>{db.resultImage.low.msg}</p>
             </>
           )}
-
-          <Link href="/">
-            <a>Retornar ao início</a>
-          </Link>
-          <Link
-            href={{
-              pathname: '/home',
-              query: { id: router.query.id }
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center'
             }}
           >
-            <a>Retornar ao início</a>
-          </Link>
+            <Link href="/">
+              <a style={{ marginRight: '20px' }}>Retornar ao início</a>
+            </Link>
+            <Link
+              href={{
+                pathname: '/home',
+                query: { id: router.query.id }
+              }}
+            >
+              <a>Jogar Novamente</a>
+            </Link>
+          </div>
         </Widget.Content>
       </Widget>
     </>

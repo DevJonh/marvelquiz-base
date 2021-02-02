@@ -1,0 +1,91 @@
+{
+  "id": "pantera_negra",
+  "bg": "https://images2.alphacoders.com/863/thumb-1920-863001.jpg",
+  "title": "Pantera Negra - Rei de Wakanda",
+  "description": "Teste os seus conhecimentos sobre o Rei de Wakanda e descubra se você entraria para tribo",
+  "questions": [
+    {
+      "image": "https://images2.alphacoders.com/888/thumb-1920-888332.jpg",
+      "title": "Qual o nome do vilão do primeiro filme do Pantera Negra?",
+      "description": "Considere somente os filmes novos da marvel",
+      "answer": 1,
+      "alternatives": ["Namor", "Killmonger", "Zemo", "Ulysses Klaue"]
+    },
+    {
+      "image": "https://images2.alphacoders.com/888/thumb-1920-888332.jpg",
+      "title": "Qual o parentesco entre o Pantera Negra e Killmonger?",
+      "description": "",
+      "answer": 2,
+      "alternatives": ["Irmãos", "Cunhado", "Primos", "Tio"]
+    },
+    {
+      "image": "https://images2.alphacoders.com/888/thumb-1920-888332.jpg",
+      "title": "De onde vem os poderes e habilidades do Pantera Negra?",
+      "description": "",
+      "answer": 3,
+      "alternatives": [
+        "Do traje que ele utiliza",
+        "Do metal vibranium ",
+        "De um experimento em laboratório",
+        "De uma planta chamada Erva coração"
+      ]
+    },
+    {
+      "image": "https://images2.alphacoders.com/888/thumb-1920-888332.jpg",
+      "title": "Qual o nome do rei de Wakanda?",
+      "description": "",
+      "answer": 0,
+      "alternatives": ["T'Challa", "M'Baku", "W'Kabi", "Nakia"]
+    },
+    {
+      "image": "https://images2.alphacoders.com/888/thumb-1920-888332.jpg",
+      "title": "Qual o nome da irmã do Pantera Negra?",
+      "description": "",
+      "answer": 2,
+      "alternatives": ["Okoye", "Okia", "Shuri", "Nakia"]
+    },
+    {
+      "image": "https://images2.alphacoders.com/888/thumb-1920-888332.jpg",
+      "title": "Onde está localizado o Wakanda?",
+      "description": "",
+      "answer": 1,
+      "alternatives": [
+        "África do Sul",
+        "África subsariana",
+        "Nigéria",
+        "Colombia"
+      ]
+    }
+  ],
+  "external": [],
+  "theme": {
+    "colors": {
+      "primary_op": "#2F1056cc",
+      "primary": "#2F1056",
+      "secondary": "#061E47",
+      "secondary_op": "#061E47bb",
+      "mainBg": "#4f4a8ccc",
+      "contrastText": "#FFFFFF",
+      "wrong": "#a02725",
+      "success": "#388e3c"
+    },
+    "borderRadius": "4px"
+  },
+  "resultImage": {
+    "top": {
+      "url": "https://uploads.disquscdn.com/images/71d4adf80f6d13b021cab7ed378f9239ba7a89bc5e422eed3c4bf471398d4e18.gif",
+      "title": "Arrasou muito! Sua possibilidade de entrar para tribo é de",
+      "msg": "Você é top demais! Você não só entraria, como assumiria posições de liderança."
+    },
+    "middle": {
+      "url": "https://i.makeagif.com/media/11-10-2018/lWHS5i.gif",
+      "title": "Show! Sua possibilidade de entrar para tribo é de",
+      "msg": "Você tem grandes chances de ser aceito, porém é bom aprender mais caso deseje uma posição de destaque."
+    },
+    "low": {
+      "url": "https://i.pinimg.com/originals/36/c8/6e/36c86e49f8c888f8841e72fa0579bcc9.gif",
+      "title": "Sua possibilidade de entrar para tribo é de",
+      "msg": "Infelizmente você não entraria, assista os filmes do Pantera Negra e tente novamente."
+    }
+  }
+}
