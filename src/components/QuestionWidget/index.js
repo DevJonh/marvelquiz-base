@@ -36,108 +36,113 @@ const QuestionWidget = ({
   questionCorrect
 }) => {
   const router = useRouter()
-  return (
-    <Widget
-      as={motion.section}
-      transition={{ duration: 1, delay: 0.5 }}
-      variants={{
-        show: { opacity: 1, y: '0' },
-        hidden: { opacity: 0, y: '100%' }
-      }}
-      initial="hidden"
-      animate="show"
-    >
-      <Widget.Header>
-        <Link
-          href={{
-            pathname: '/home',
-            query: { id: router.query.id }
-          }}
-        >
-          <a>
-            <MdChevronLeft size={20} />
-          </a>
-        </Link>
-        <h1>
-          Pergunta {questionActual + 1} de {totalQuestion}
-        </h1>
-      </Widget.Header>
-      <Image backgroundImage={question.image} />
-      <Widget.Content>
-        <h3>{question.title}</h3>
-        <span>{question.description}</span>
 
-        {question.alternatives.map((alt, index) => {
-          return (
-            <Question
-              as={motion.button}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              variants={{
-                show: { opacity: 1 },
-                hidden: { opacity: 0 }
-              }}
-              initial="hidden"
-              animate="show"
-              className={
-                (Number(selected) === index &&
-                  questionCorrect === 1 &&
-                  'success') ||
-                (Number(selected) === index &&
-                  questionCorrect === 0 &&
-                  'error') ||
-                (Number(selected) === index && 'active')
-              }
-              key={alt}
-              value={index}
-              onClick={selectedFunc}
-            >
-              {alt}
-            </Question>
-          )
-        })}
+  if (!question) {
+    router.push('/')
+  } else {
+    return (
+      <Widget
+        as={motion.section}
+        transition={{ duration: 1, delay: 0.5 }}
+        variants={{
+          show: { opacity: 1, y: '0' },
+          hidden: { opacity: 0, y: '100%' }
+        }}
+        initial="hidden"
+        animate="show"
+      >
+        <Widget.Header>
+          <Link
+            href={{
+              pathname: '/home',
+              query: { id: router.query.id }
+            }}
+          >
+            <a>
+              <MdChevronLeft size={20} />
+            </a>
+          </Link>
+          <h1>
+            Pergunta {questionActual + 1} de {totalQuestion}
+          </h1>
+        </Widget.Header>
+        <Image backgroundImage={question.image} />
+        <Widget.Content>
+          <h3>{question.title}</h3>
+          <span>{question.description}</span>
 
-        <Button
-          as={motion.button}
-          whileTap={{ scale: 0.9 }}
-          type="button"
-          disabled={selected === 5}
-          onClick={confirm}
-        >
-          CONFIRMAR
-        </Button>
+          {question.alternatives.map((alt, index) => {
+            return (
+              <Question
+                as={motion.button}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                variants={{
+                  show: { opacity: 1 },
+                  hidden: { opacity: 0 }
+                }}
+                initial="hidden"
+                animate="show"
+                className={
+                  (Number(selected) === index &&
+                    questionCorrect === 1 &&
+                    'success') ||
+                  (Number(selected) === index &&
+                    questionCorrect === 0 &&
+                    'error') ||
+                  (Number(selected) === index && 'active')
+                }
+                key={alt}
+                value={index}
+                onClick={selectedFunc}
+              >
+                {alt}
+              </Question>
+            )
+          })}
 
-        {questionCorrect === 1 && (
-          <Results state={questionCorrect}>
-            <Lottie
-              options={{
-                autoplay: true,
-                animationData: success,
-                loop: true
-              }}
-              width={36}
-              height={36}
-              value="Success_tick"
-            />
-          </Results>
-        )}
-        {questionCorrect === 0 && (
-          <Results state={questionCorrect}>
-            <Lottie
-              options={{
-                autoplay: true,
-                animationData: error,
-                loop: true
-              }}
-              width={36}
-              height={36}
-              value="Frame 1"
-            />
-          </Results>
-        )}
-      </Widget.Content>
-    </Widget>
-  )
+          <Button
+            as={motion.button}
+            whileTap={{ scale: 0.9 }}
+            type="button"
+            disabled={selected === 5}
+            onClick={confirm}
+          >
+            CONFIRMAR
+          </Button>
+
+          {questionCorrect === 1 && (
+            <Results state={questionCorrect}>
+              <Lottie
+                options={{
+                  autoplay: true,
+                  animationData: success,
+                  loop: true
+                }}
+                width={36}
+                height={36}
+                value="Success_tick"
+              />
+            </Results>
+          )}
+          {questionCorrect === 0 && (
+            <Results state={questionCorrect}>
+              <Lottie
+                options={{
+                  autoplay: true,
+                  animationData: error,
+                  loop: true
+                }}
+                width={36}
+                height={36}
+                value="Frame 1"
+              />
+            </Results>
+          )}
+        </Widget.Content>
+      </Widget>
+    )
+  }
 }
 
 export default QuestionWidget

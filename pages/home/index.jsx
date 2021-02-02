@@ -59,6 +59,7 @@ const Home = () => {
   return (
     <>
       <Head>
+        <title>{db.title}</title>
         <meta property="og:image" content={db.bg} key="bg-img" />
       </Head>
       <QuizBackground backgroundImage={db.bg}>

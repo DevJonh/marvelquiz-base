@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import { motion } from 'framer-motion'
 
 import QuizLogo from '../../src/components/QuizLogo'
@@ -22,14 +23,23 @@ const QuizPage = () => {
   const [hits, setHits] = useState([])
   const [isCorrect, setIsCorrect] = useState(3)
   const [screenState, setScreenState] = useState(screenStates.LOADING)
+  const [db, setDb] = useState()
 
   const router = useRouter()
 
-  const db = useMemo(() => {
-    return (
-      router.query.id && require(`../../src/database/${router.query.id}.json`)
-    )
+  const res = useMemo(async () => {
+    const { id } = await router.query
+    const res = id && require(`../../src/database/${id}.json`)
+    return res
   }, [router.query.id])
+
+  useEffect(() => {
+    res.then((res) => {
+      if (res !== undefined) {
+        setDb(res)
+      }
+    })
+  })
 
   useEffect(() => {
     setTimeout(() => {
@@ -37,7 +47,11 @@ const QuizPage = () => {
     }, 2 * 1000)
   }, [])
 
+  if (db === undefined) {
+    return <div> </div>
+  }
   const question = db.questions[questionActual]
+
   const totalQuestion = db.questions.length
 
   const confirm = () => {
@@ -68,6 +82,9 @@ const QuizPage = () => {
 
   return (
     <>
+      <Head>
+        <title>{db.title}</title>
+      </Head>
       <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>
           <QuizLogo />
