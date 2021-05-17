@@ -8,7 +8,7 @@
     "eslint:init": "eslint --init"
   },
   "dependencies": {
-    "framer-motion": "^4.0.3",
+    "framer-motion": "^4.1.16",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "^16.8.0",
